@@ -1,4 +1,5 @@
 
+
 getHoroscopes();
 
 function makeRequest(url, method, formData, callback) {
@@ -39,8 +40,12 @@ function deleteHoroscope() {
     requestData.append("action", "deleteHoroscope");
 
     makeRequest("deleteHoroscope.php", "DELETE", requestData, (response) => {
-        console.log(response);
-        writeDeleteHTML(response);
+        if (response) {
+            writeDeleteHTML();
+        }
+        else {
+            tryAgainHTML();
+        }
     })
 }
 
@@ -57,16 +62,18 @@ function addNewHoroscope() {
         requestData.append("newHoroscopeDate", saveNewDate);
         requestData.append("newHoroscopeDay", saveNewDay);
         requestData.append("newHoroscopeMonth", saveNewMonth);
-    
+
         makeRequest("addHoroscope.php", "POST", requestData, (response) => {
             if (response) {
                 getHoroscopes(response);
             }
-            console.log(response);
+            else {
+                tryAgainHTML();
+            }
         })
-
     }
 }
+
 function updateHoroscope() {
     var saveNewDate = document.getElementById('newHoroscopeDate').value
     if (saveNewDate != '') {
@@ -85,7 +92,7 @@ function updateHoroscope() {
             if (response) {
                 getHoroscopes(response);
             }
-            console.log(response);
+            tryAgainHTML();
         })
     }
 }
@@ -93,11 +100,19 @@ function updateHoroscope() {
 async function writeHTML(response) {
     var answers = document.getElementById('answers');
     var yourHoroscope = document.getElementById('yourHoroscope');
-    yourHoroscope.innerHTML = " Your sign is: ";
+    yourHoroscope.innerHTML = "Your sign is: ";
     answers.innerHTML = response;
 }
-async function writeDeleteHTML(response) {
+
+async function writeDeleteHTML() {
     var answers = document.getElementById('answers');
-    answers.innerHTML = response;
+    answers.innerHTML = "Your sign is deleted";
+    var yourHoroscope = document.getElementById('yourHoroscope');
+    yourHoroscope.innerHTML = "";
+}
+
+async function tryAgainHTML() {
+    var answers = document.getElementById('answers');
+    answers.innerHTML = "Something went wrong, please try again.";
 }
 

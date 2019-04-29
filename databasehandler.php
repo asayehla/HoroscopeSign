@@ -1,6 +1,7 @@
 
 <?php
-class Database {
+class Database
+{
 
     function __construct()
     {
@@ -10,7 +11,6 @@ class Database {
 
         try {
             $this->connection = new PDO($dsn, $user, $password);
-                       
         } catch (PDOException $e) {
             throw $e;
         }

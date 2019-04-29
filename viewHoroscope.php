@@ -8,4 +8,3 @@ if(isset($_SESSION["horoscopeSign"])){
 } else {
     echo json_encode(false);
 }
-?>

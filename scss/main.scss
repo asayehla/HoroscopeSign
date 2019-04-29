@@ -32,10 +32,6 @@ body {
                 outline: none;    
                 border: 1px solid black;
             }
-            &[type="option"]{ 
-                background: red;
-                font-size: 0.1rem;
-            }
         }
         input {
             appearance: none;
