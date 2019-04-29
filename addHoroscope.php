@@ -1,7 +1,8 @@
 <?php
-    
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
+
+if($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_SESSION["horoscopeSign"])) {
     try {
     $date=$_POST['newHoroscopeDate'];
     $month=$_POST['newHoroscopeMonth'];
@@ -11,16 +12,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $databaseResult = $addHoroscope->addNewHoroscope($dateStr);
     $sign = $databaseResult[0];
     
-    session_start();
     $_SESSION["horoscopeSign"] = $sign[0];
     $_SESSION["dateofBirth"] = $date;
 
-    echo json_encode($sign[0]);
-
+    echo json_encode(true);
+    
     } catch (Exception $e){
-            echo json_encode($e->getMessage());
-        }
+        echo json_encode($e->getMessage());
     }
+} else {
+    echo json_encode(false);
+}
+//include classAddHoroscope.php;
+//include_once classAddHoroscope.php;
+
 
 class AddHoroscope {
     function __construct()
@@ -41,16 +46,8 @@ class AddHoroscope {
             return array("error" => "result empty");
         }
 
-       // hämta information ifrån databasen och spara det i $_SESSION.
        return $result;
     }
 }
 
-/*sidan ska bara gå att begära via POST, den ska kolla efter ett födelsedatum i $_POST, räkna ut
-vilket horoskop födelsedatumet tillhör genom att hämta information ifrån databasen och spara det
-i $_SESSION.
-Om ett horoskop redan finns sparat ska det inte skrivas över. Om det inte gick att räkna ut
-horoskopet ska ingenting sparas.
-Sidan ska inte använda echo eller skriva någon output förutom true eller false, beroende på om
-horoskopet sparades*/
 ?>
