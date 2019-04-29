@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    background: #eee;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    .form {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            font-size: 1.4rem;
+            margin: 1.2rem 0 .25rem 0;
+        }
+        label {
+            padding: .25rem 0;
+            align-items: center;
+
+        }
+        select {
+            width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+            border: 1px solid rgba(15, 15, 15, 0.74);
+            border-radius: 3px;
+            background: none;
+            font-size: 1.3rem;
+            padding: .5rem;
+            margin: 0 0 .5rem 0;
+
+            &:focus {
+                outline: none;    
+                border: 1px solid black;
+            }
+            &[type="option"]{ 
+                background: red;
+                font-size: 0.1rem;
+            }
+        }
+        input {
+            appearance: none;
+            -webkit-appearance: none;
+            border: 1px solid rgba(15, 15, 15, 0.74);
+            border-radius: 3px;
+            background: none;
+            font-size: 1.3rem;
+            padding: .5rem;
+            margin: 0 0 .5rem 0;
+
+            
+            &:focus {
+                outline: none;    
+                border: 1px solid black;
+            
+            }
+
+            &::placeholder {
+                font-size: .8rem;
+                transform: translateY(-.6rem);
+            }
+
+        
+        }
+        .btn{
+            color: white;
+            border: none;
+            font-weight: 700;
+            padding: 1rem 1rem;
+            margin: 2rem 0 0 0;
+            border-radius: 3px;
+                       
+            &#get{
+                background: rgba(132, 21, 175, 0.76);
+            }
+
+            &#delete{
+                background: rgba(255, 60, 1, 0.76);
+            }
+
+            &#update{
+                background: rgba(41, 65, 173, 0.76);
+            }
+
+            &#addnew{
+                background: rgba(41, 173, 48, 0.76);
+            }   
+        }
+    }
+}
