@@ -43,7 +43,6 @@ class AddHoroscope
         if (empty($result)) {
             return array("error" => "result empty");
         }
-
         return $result;
     }
 }

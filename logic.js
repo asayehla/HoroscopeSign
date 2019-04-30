@@ -79,6 +79,7 @@ function updateHoroscope() {
     var saveNewDate = document.getElementById('newHoroscopeDate').value
     if (saveNewDate != '') {
 
+        // removing the year and save day and month 
         saveNewDate.split();
         var saveNewMonth = saveNewDate[4] + saveNewDate[5];
         var saveNewDay = saveNewDate[6] + saveNewDate[7];
@@ -116,4 +117,3 @@ async function tryAgainHTML() {
     var answers = document.getElementById('answers');
     answers.innerHTML = "Something went wrong, please try again.";
 }
-

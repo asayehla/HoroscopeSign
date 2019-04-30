@@ -1,16 +1,16 @@
 body {
-    margin: 0;
     background:rgba(15, 14, 14, 0.952);
-    background-position: center;
-    background-size: cover;
     font-family: 'Poppins', sans-serif;
-     color: rgb(233, 233, 4);
+    color: rgb(233, 233, 4);
+    width: 100vw;
+    display: flex;
     
     .container {
         display: flex;
+        flex-direction: row;
         margin: 0 auto;
-        width: 100vw;
-        max-width: 200px;
+        max-width: 300px;
+        width: 100%;
 
         .form {
             padding: 1rem;
@@ -19,19 +19,21 @@ body {
 
             h1 {
                 font-size: 1.4rem;
-                margin: 1.2rem 0 .25rem 0;
+                margin: 1.2rem 0 .7rem 0;
+                text-align: center;
             }
             label {
                 padding: .25rem 0;
                 align-items: center;
-
+                font-size: .76rem;
             }
+            
             select {
                 width: 100%;
                 appearance: none;
                 -webkit-appearance: none;
                 border: 1px solid rgba(241, 238, 5, 0.822);
-                border-radius: 3px;
+                border-radius: 9999rem;
                 background: none;
                 font-size: 1.3rem;
                 padding: .5rem;
@@ -46,7 +48,7 @@ body {
                 appearance: none;
                 -webkit-appearance: none;
                 border: 1px solid rgba(219, 243, 0, 0.74);
-                border-radius: 3px;
+                border-radius: 9999rem;
                 background: none;
                 font-size: 1.3rem;
                 padding: .5rem;
@@ -60,31 +62,37 @@ body {
                 }
 
                 &::placeholder {
-                    color: bisque;
-                    font-size: .8rem;
+                    color: rgb(255, 231, 202);
+                    font-size: .7rem;
                     transform: translateY(-.6rem);
                 }
-
-            
             }
-            .btn{
-                color: white;
+
+            .btn {
+                color: rgb(221, 220, 220);
                 border: none;
                 font-weight: 700;
                 padding: 1rem 1rem;
                 margin: 2rem 0 0 0;
-                border-radius: 3px;
+                justify-content: flex-end;
+                border-radius: 9999rem;
+                transition: all .2s ease;
+                text-align: center;
 
-                &#delete{
+                &#delete {
                     background: rgba(255, 60, 1, 0.76);
                 }
 
-                &#update{
+                &#update {
                     background: rgba(41, 65, 173, 0.76);
                 }
 
-                &#addnew{
+                &#addnew {
                     background: rgba(41, 173, 48, 0.76);
+                }
+                &:hover {
+                    filter: brightness(1.4);
+                    transform: scale(1.07);
                 }   
             }
         }

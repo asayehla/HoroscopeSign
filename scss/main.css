@@ -1,19 +1,24 @@
 body {
-  margin: 0;
   background: rgba(15, 14, 14, 0.952);
-  background-position: center;
-  background-size: cover;
   font-family: 'Poppins', sans-serif;
   color: #e9e904;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin: 0 auto;
-  width: 100vw;
-  max-width: 200px;
+  max-width: 300px;
+  width: 100%;
 }
 
 body .container .form {
@@ -29,7 +34,8 @@ body .container .form {
 
 body .container .form h1 {
   font-size: 1.4rem;
-  margin: 1.2rem 0 .25rem 0;
+  margin: 1.2rem 0 .7rem 0;
+  text-align: center;
 }
 
 body .container .form label {
@@ -37,6 +43,7 @@ body .container .form label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: .76rem;
 }
 
 body .container .form select {
@@ -45,7 +52,7 @@ body .container .form select {
        appearance: none;
   -webkit-appearance: none;
   border: 1px solid rgba(241, 238, 5, 0.822);
-  border-radius: 3px;
+  border-radius: 9999rem;
   background: none;
   font-size: 1.3rem;
   padding: .5rem;
@@ -62,7 +69,7 @@ body .container .form input {
        appearance: none;
   -webkit-appearance: none;
   border: 1px solid rgba(219, 243, 0, 0.74);
-  border-radius: 3px;
+  border-radius: 9999rem;
   background: none;
   font-size: 1.3rem;
   padding: .5rem;
@@ -76,38 +83,44 @@ body .container .form input:focus {
 }
 
 body .container .form input::-webkit-input-placeholder {
-  color: bisque;
-  font-size: .8rem;
+  color: #ffe7ca;
+  font-size: .7rem;
   -webkit-transform: translateY(-0.6rem);
           transform: translateY(-0.6rem);
 }
 
 body .container .form input:-ms-input-placeholder {
-  color: bisque;
-  font-size: .8rem;
+  color: #ffe7ca;
+  font-size: .7rem;
   transform: translateY(-0.6rem);
 }
 
 body .container .form input::-ms-input-placeholder {
-  color: bisque;
-  font-size: .8rem;
+  color: #ffe7ca;
+  font-size: .7rem;
   transform: translateY(-0.6rem);
 }
 
 body .container .form input::placeholder {
-  color: bisque;
-  font-size: .8rem;
+  color: #ffe7ca;
+  font-size: .7rem;
   -webkit-transform: translateY(-0.6rem);
           transform: translateY(-0.6rem);
 }
 
 body .container .form .btn {
-  color: white;
+  color: #dddcdc;
   border: none;
   font-weight: 700;
   padding: 1rem 1rem;
   margin: 2rem 0 0 0;
-  border-radius: 3px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-radius: 9999rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  text-align: center;
 }
 
 body .container .form .btn#delete {
@@ -120,5 +133,12 @@ body .container .form .btn#update {
 
 body .container .form .btn#addnew {
   background: rgba(41, 173, 48, 0.76);
+}
+
+body .container .form .btn:hover {
+  -webkit-filter: brightness(1.4);
+          filter: brightness(1.4);
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
 }
 /*# sourceMappingURL=main.css.map */
