@@ -5,35 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="highhat.ico">
     <title>Horoscope</title>
     <link rel="stylesheet" href="scss/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 
 <body>
-    <div class="form">
-        <h1>Find out your Horoscope today!!! </h1>
-        <label>19840101</label>
-        <input type="text" name="newHoroscopeDate" id="newHoroscopeDate" placeholder="19840101">
+    <div class="container">
+        <div class="form">
+            <h1>Find out your Horoscope today!!! </h1>
+            <label>19840101</label>
+            <input type="text" name="newHoroscopeDate" id="newHoroscopeDate" placeholder="19840101">
 
-        <h2>
-            <div id="yourHoroscope"></div>
-            <div id="answers"></div>
-        </h2>
-        <div class="listContainer"></div>
+            <h2>
+                <div id="yourHoroscope"></div>
+                <div id="answers"></div>
+            </h2>
 
-        <!--denna knapp inte synas eller vara inaktiverat om horoskopet inte är
-sparat ännu: green-->
-        <div class="btn" id="addnew" onclick="addNewHoroscope()">Save</div>
+            <div class="btn" id="addnew" onclick="addNewHoroscope()">Save</div>
+            <div class="btn" id="update" onclick="updateHoroscope()">Update</div>
+            <div class="btn" id="delete" onclick="deleteHoroscope()">Delete</div>
 
-        <!-- denna knapp inte synas eller vara inaktiverat om horoskopet inte är
-sparat ännu_blue-->
-        <div class="btn" id="update" onclick="updateHoroscope()">Update</div>
-        <!-- denna knapp inte synas eller vara inaktiverat om horoskopet inte är
-sparat ännu:red-->
-        <div class="btn" id="delete" onclick="deleteHoroscope()">Delete</div>
-
+        </div>
     </div>
-
 </body>
 <script src="logic.js"></script>
 

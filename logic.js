@@ -1,5 +1,4 @@
-
-
+//this function will check if there is anything in session storage when you load the website.
 getHoroscopes();
 
 function makeRequest(url, method, formData, callback) {
@@ -27,6 +26,7 @@ function makeRequest(url, method, formData, callback) {
         })
 }
 
+
 function getHoroscopes() {
     makeRequest("viewHoroscope.php", "GET", {}, (response) => {
         if (response) {
@@ -49,6 +49,7 @@ function deleteHoroscope() {
     })
 }
 
+//this function and update is almost the same
 function addNewHoroscope() {
     var saveNewDate = document.getElementById('newHoroscopeDate').value
     if (saveNewDate != '') {

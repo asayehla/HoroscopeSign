@@ -1,8 +1,6 @@
-
 <?php
 class Database
 {
-
     function __construct()
     {
         $dsn = 'mysql:host=localhost;dbname=HoroscopeDatabase;';
@@ -16,4 +14,3 @@ class Database
         }
     }
 }
-?>
